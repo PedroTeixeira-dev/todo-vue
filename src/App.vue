@@ -19,7 +19,7 @@ const estado = reactive({
     },
     {
       titulo: 'Ir para a academia',
-      finalizada: true,
+      finalizada: false,
     }
   ]
 })
@@ -60,7 +60,7 @@ const cadastraTarefa = () => {
 <template>
   <div class="container">
     <Cabecalho :tarefas-pendentes = "getTarefasPendentes().length"  />
-    <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefa-temp="estado.tarefaTemporaria" :edita-tarefa-temp="evento => estado.tarefaTemporaria = evento.target.value" :cadastra-tarefa="cadastraTarefa()" />
+    <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefa-temp="estado.tarefaTemporaria" :edita-tarefa-temp="evento => estado.tarefaTemporaria = evento.target.value" :cadastra-tarefa="cadastraTarefa" />
     <ListaDeTarefas :tarefas="getTarefasFiltradas()" />
 
 
